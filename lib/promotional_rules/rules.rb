@@ -5,7 +5,7 @@ require_relative '../types'
 
 module PromotionalRules
   class Rule < Dry::Struct
-    attribute :options,   Types::Strict::Array.of(Types::Strict::Hash)
+    attribute :options, Types::Strict::Array.of(Types::Strict::Hash)
   end
 
   class CartRule < Rule
