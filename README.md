@@ -8,7 +8,7 @@
 | 002          | Silver cufflinks | £45.00 |
 | 003          | Silk Dress       | £19.95 |
 
-### Getting product from `Stock`
+### Finding product in `Stock`
 
 ```ruby
 stock = Stock.new
@@ -25,7 +25,7 @@ There are 2 types of promotional rules: `PromotionalRules::CartRule` and `Promot
 
 **required:**
 
-- `rule_type <Symbol>`
+- `rule_type Symbol`
 - `options <Array>`
 
 **rule types:**
@@ -38,8 +38,8 @@ There are 2 types of promotional rules: `PromotionalRules::CartRule` and `Promot
 
 **required:**
 
-- `product_code <String>`
-- `rule_type <Symbol>`
+- `product_code String`
+- `rule_type Symbol`
 - `options <Array>`
 
 **rule types:**
