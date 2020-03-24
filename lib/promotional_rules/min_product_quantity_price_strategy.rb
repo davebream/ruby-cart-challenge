@@ -21,11 +21,11 @@ module PromotionalRules
     private
 
     def highest_discount_option
-      min_quantity_reached_options.max_by { |option| option[:quantity] }
+      min_quantity_reached_options.max_by { |option| option[:min_quantity] }
     end
 
     def min_quantity_reached_options
-      @rule.options.select { |option| @cart.item_quantity(@rule.product_code) >= option[:quantity] }
+      @rule.options.select { |option| @cart.item_quantity(@rule.product_code) >= option[:min_quantity] }
     end
 
     class Calculator

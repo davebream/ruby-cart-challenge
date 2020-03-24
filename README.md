@@ -44,9 +44,9 @@ There are 2 types of promotional rules: `PromotionalRules::CartRule` and `Promot
 
 **rule types:**
 
-| `rule_type`                   | `option`                                          |
-| ----------------------------- | ------------------------------------------------- |
-| `:min_product_quantity_price` | `{ quantity: [Integer], price_cents: [Integer] }` |
+| `rule_type`                   | `option`                                              |
+| ----------------------------- | ----------------------------------------------------- |
+| `:min_product_quantity_price` | `{ min_quantity: [Integer], price_cents: [Integer] }` |
 
 ## Example
 
@@ -55,7 +55,7 @@ There are 2 types of promotional rules: `PromotionalRules::CartRule` and `Promot
     PromotionalRules::ProductRule.new(
       product_code: '001',
       rule_type: :min_product_quantity_price,
-      options: [{ quantity: 2, price_cents: 850 }]
+      options: [{ min_quantity: 2, price_cents: 850 }]
     ),
     PromotionalRules::CartRule.new(
       rule_type: :min_cart_total_fraction_discount,

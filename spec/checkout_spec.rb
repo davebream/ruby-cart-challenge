@@ -7,7 +7,7 @@ describe Checkout do
   describe '.total' do
     let(:promotional_rules) do
       [
-        PromotionalRules::ProductRule.new(product_code: '001', rule_type: :min_product_quantity_price, options: [{ quantity: 2, price_cents: 850 }]),
+        PromotionalRules::ProductRule.new(product_code: '001', rule_type: :min_product_quantity_price, options: [{ min_quantity: 2, price_cents: 850 }]),
         PromotionalRules::CartRule.new(rule_type: :min_cart_total_fraction_discount, options: [{ min_total_cents: 6000, fraction: BigDecimal('0.1') }])
       ]
     end
