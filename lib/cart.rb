@@ -20,7 +20,7 @@ class Cart
     @items.select { |item| item.code == code }
   end
 
-  def add_discount(amount_in_cents)
+  def apply_discount(amount_in_cents)
     @discount_cents += amount_in_cents
   end
 

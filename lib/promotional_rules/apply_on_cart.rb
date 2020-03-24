@@ -25,7 +25,7 @@ module PromotionalRules
       return if strategy.nil?
 
       rule_discount = strategy.new(@cart).call(rule)
-      @cart.add_discount(rule_discount)
+      @cart.apply_discount(rule_discount)
     end
   end
 end
