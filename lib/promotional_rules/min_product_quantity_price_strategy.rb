@@ -14,6 +14,7 @@ module PromotionalRules
       if highest_discount_option
         @value_cents = @calculator.call(@rule.product_code, highest_discount_option)
       end
+
       @value_cents
     end
 

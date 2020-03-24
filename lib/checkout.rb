@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './cart'
 require_relative './stock'
 require_relative './promotional_rules/promotional_rules'

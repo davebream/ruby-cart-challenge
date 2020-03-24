@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Stock
   Product = Struct.new(:code, :name, :price_cents)
 
