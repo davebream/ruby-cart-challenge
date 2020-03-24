@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 require 'dry-struct'
-require_relative '../types'
+
+module Types
+  include Dry.Types()
+end
 
 module PromotionalRules
   class Rule < Dry::Struct
