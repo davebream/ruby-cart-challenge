@@ -11,7 +11,9 @@ module PromotionalRules
     def call(rule)
       @rule = rule
 
-      @value_cents = @calculator.call(@rule.product_code, highest_discount_option) if highest_discount_option
+      if highest_discount_option
+        @value_cents = @calculator.call(@rule.product_code, highest_discount_option)
+      end
       @value_cents
     end
 
@@ -31,8 +33,8 @@ module PromotionalRules
       end
 
       def call(product_code, option)
-        items_eligable_for_discount = @cart.items_by_product_code(product_code)
-        items_eligable_for_discount.map { |item| item.price_cents - option[:price_cents] }.inject(0, :+)
+        items_eligible_for_discount = @cart.items_by_product_code(product_code)
+        items_eligible_for_discount.map { |item| item.price_cents - option[:price_cents] }.inject(0, :+)
       end
     end
   end
