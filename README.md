@@ -25,28 +25,28 @@ There are 2 types of promotional rules: `PromotionalRules::CartRule` and `Promot
 
 **required:**
 
-- `rule_type Symbol`
-- `options <Array>`
+- `rule_type [Symbol]`
+- `options [Array<Hash>]`
 
 **rule types:**
 
-| `rule_type`                         | `option`                                             |
-| ----------------------------------- | ---------------------------------------------------- |
-| `:min_cart_total_fraction_discount` | `{ min_total_cents: Integer, fraction: BigDecimal }` |
+| `rule_type`                         | `option`                                                 |
+| ----------------------------------- | -------------------------------------------------------- |
+| `:min_cart_total_fraction_discount` | `{ min_total_cents: [Integer], fraction: [BigDecimal] }` |
 
 ### `PromotionalRules::ProductRule`
 
 **required:**
 
-- `product_code String`
-- `rule_type Symbol`
-- `options <Array>`
+- `product_code [String]`
+- `rule_type [Symbol]`
+- `options [Array<Hash>]`
 
 **rule types:**
 
-| `rule_type`                   | `option`                                      |
-| ----------------------------- | --------------------------------------------- |
-| `:min_product_quantity_price` | `{ quantity: Integer, price_cents: Integer }` |
+| `rule_type`                   | `option`                                          |
+| ----------------------------- | ------------------------------------------------- |
+| `:min_product_quantity_price` | `{ quantity: [Integer], price_cents: [Integer] }` |
 
 ## Example
 
