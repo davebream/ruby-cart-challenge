@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module PromotionalRules
-  class MinCartTotalFractionDiscountStrategy
+  class MinCartTotalDiscountStrategy
     def initialize(cart)
       @cart        = cart
       @value_cents = 0

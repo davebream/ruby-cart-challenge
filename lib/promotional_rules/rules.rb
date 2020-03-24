@@ -12,11 +12,11 @@ module PromotionalRules
   end
 
   class CartRule < Rule
-    attribute :rule_type, Types::Strict::Symbol.enum(:min_cart_total_fraction_discount)
+    attribute :rule_type, Types::Strict::Symbol.enum(:min_total_discount)
   end
 
   class ProductRule < Rule
     attribute :product_code, Types::Strict::String
-    attribute :rule_type, Types::Strict::Symbol.enum(:min_product_quantity_price)
+    attribute :rule_type, Types::Strict::Symbol.enum(:quantity_discount)
   end
 end

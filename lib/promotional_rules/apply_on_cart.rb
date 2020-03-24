@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require_relative './min_cart_total_fraction_discount_strategy'
-require_relative './min_product_quantity_price_strategy'
+require_relative './min_cart_total_discount_strategy'
+require_relative './product_quantity_discount_strategy'
 
 module PromotionalRules
   class ApplyOnCart
     RULE_STRATEGIES = {
-      min_cart_total_fraction_discount: MinCartTotalFractionDiscountStrategy,
-      min_product_quantity_price: MinProductQuantityPriceStrategy
+      min_total_discount: MinCartTotalDiscountStrategy,
+      quantity_discount: ProductQuantityDiscountStrategy
     }.freeze
 
     def initialize(cart)

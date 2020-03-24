@@ -7,8 +7,8 @@ describe Checkout do
   describe '.total' do
     let(:promotional_rules) do
       [
-        PromotionalRules::ProductRule.new(product_code: '001', rule_type: :min_product_quantity_price, options: [{ min_quantity: 2, price_cents: 850 }]),
-        PromotionalRules::CartRule.new(rule_type: :min_cart_total_fraction_discount, options: [{ min_total_cents: 6000, fraction: BigDecimal('0.1') }])
+        PromotionalRules::ProductRule.new(product_code: '001', rule_type: :quantity_discount, options: [{ min_quantity: 2, price_cents: 850 }]),
+        PromotionalRules::CartRule.new(rule_type: :min_total_discount, options: [{ min_total_cents: 6000, fraction: BigDecimal('0.1') }])
       ]
     end
 
@@ -26,7 +26,7 @@ describe Checkout do
       end
     end
 
-    context 'when min_cart_total_fraction_discount rule applied' do
+    context 'when min_total_discount rule applied' do
       before do
         checkout.scan(stock.find('001'))
         checkout.scan(stock.find('002'))
@@ -38,7 +38,7 @@ describe Checkout do
       end
     end
 
-    context 'when min_product_quantity_price rule applicable' do
+    context 'when quantity_discount rule applicable' do
       before do
         checkout.scan(stock.find('001'))
         checkout.scan(stock.find('003'))
@@ -50,7 +50,7 @@ describe Checkout do
       end
     end
 
-    context 'when both min_product_quantity_price & min_cart_total_fraction_discount applicable' do
+    context 'when both quantity_discount & min_total_discount applicable' do
       before do
         checkout.scan(stock.find('001'))
         checkout.scan(stock.find('002'))
